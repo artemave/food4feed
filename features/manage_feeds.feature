@@ -5,7 +5,7 @@ Feature: Manage Feeds
   I want to create and manage custom feeds from html pages
 
   Scenario: create new feed
-    Given I am logged in as "artem"
+    Given I am logged in 
     When I go to my feeds
     And I follow "new feed"
     And I fill in "name" with "Weatherdiff"
@@ -15,7 +15,7 @@ Feature: Manage Feeds
     Then I should see "feed created"
 
   Scenario: edit feed
-    Given I am logged in as "artem"
+    Given I am logged in 
     And there is a feed called "Weatherdiff"
     When I go to my feeds
     And I follow "edit"
@@ -25,14 +25,14 @@ Feature: Manage Feeds
     Then I should see "Weatherdiff2"
 
   Scenario: use feed
-    Given I am logged in as "artem"
+    Given I am logged in 
     And there is a feed called "Weatherdiff"
     When I go to my feeds
     And I follow "show"
     Then I should get "This is Weatherdiff," from "rss link" content
 
   Scenario: delete feed
-    Given I am logged in as "artem"
+    Given I am logged in 
     And there is a feed called "Weatherdiff"
     When I go to my feeds
     And I follow "destroy"

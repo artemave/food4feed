@@ -9,8 +9,9 @@ Feature: Manage Feeds
     When I go to my feeds
     And I follow "new feed"
     And I fill in "name" with "Weatherdiff"
-    And I fill in "url" with "http://www.weatherdiff.com"
-    And I fill in "xpath" with '//*[@id="content"]'
+    And I fill in "link" with "http://www.weatherdiff.com"
+    And I fill in "title" with 'p:nth-child(3)'
+    And I fill in "description" with '#location_list'
     And I press "Create"
     Then I should see "feed created"
 
@@ -29,7 +30,8 @@ Feature: Manage Feeds
     And there is a feed called "Weatherdiff"
     When I go to my feeds
     And I follow "show"
-    Then I should get "This is Weatherdiff," from "rss link" content
+    Then I should see "This is Weatherdiff,"
+    And I should see "number of locations"
 
   Scenario: delete feed
     Given I am logged in 

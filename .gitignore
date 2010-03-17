@@ -1,3 +1,4 @@
 log/
 *.swp
 app/views/taglibs/auto/
+test/fixtures/

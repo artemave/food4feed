@@ -9,7 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100313152123) do
+ActiveRecord::Schema.define(:version => 20100317171428) do
+
+  create_table "feeds", :force => true do |t|
+    t.string   "channel_name"
+    t.string   "channel_link"
+    t.string   "item_title_selector"
+    t.string   "item_description_selector"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "crypted_password",          :limit => 40

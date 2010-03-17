@@ -3,8 +3,8 @@ class Feed < ActiveRecord::Base
   hobo_model # Don't put anything above this
 
   fields do
-    name                      :string
-    link                      :string
+    channel_name              :string
+    channel_link              :string
     item_title_selector       :string
     item_description_selector :string
     timestamps

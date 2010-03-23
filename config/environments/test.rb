@@ -1,9 +1,3 @@
-config.gem 'cucumber'
-config.gem 'selenium-client'
-config.gem 'Selenium'
-config.gem 'rspec'
-config.gem 'rspec-rails', :lib => 'spec/rails'
-config.gem 'test-unit'
 
 # Settings specified here will take precedence over those in config/environment.rb
 

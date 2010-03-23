@@ -6,21 +6,21 @@ Feature: Manage Feeds
 
   Scenario: create new feed
     Given I am logged in 
-    When I go to my feeds
-    And I follow "new feed"
-    And I fill in "name" with "Weatherdiff"
-    And I fill in "link" with "http://www.weatherdiff.com"
-    And I fill in "title" with 'p:nth-child(3)'
-    And I fill in "description" with '#location_list'
-    And I press "Create"
-    Then I should see "feed created"
+    When I am on the list of feeds
+    And I follow "New Feed"
+    And I fill in "Name" with "Weatherdiff"
+    And I fill in "Link" with "http://www.weatherdiff.com"
+    And I fill in "Title" with 'p:nth-child(3)'
+    And I fill in "Description" with '#location_list'
+    And I press "Create Feed"
+    Then I should see "created successfully"
 
   Scenario: edit feed
     Given I am logged in 
     And there is a feed called "Weatherdiff"
     When I go to my feeds
-    And I follow "edit"
-    And I fill in "name" with "Weatherdiff2"
+    And I follow "Edit"
+    And I fill in "Name" with "Weatherdiff2"
     And I press "Save"
     And I go to my feeds
     Then I should see "Weatherdiff2"
@@ -29,7 +29,7 @@ Feature: Manage Feeds
     Given I am logged in 
     And there is a feed called "Weatherdiff"
     When I go to my feeds
-    And I follow "show"
+    And I follow "Weatherdiff"
     Then I should see "This is Weatherdiff,"
     And I should see "number of locations"
 

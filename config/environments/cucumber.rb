@@ -21,10 +21,18 @@ config.action_controller.allow_forgery_protection    = false
 # ActionMailer::Base.deliveries array.
 config.action_mailer.delivery_method = :test
 
+config.gem 'mongrel', :lib => false, :source => 'http://gems.rubyinstaller.org'
+config.gem 'test-unit', :lib => false, :version => '1.2.3'
+config.gem 'rspec', :lib => false
+config.gem 'rspec-rails', :lib => false
+config.gem 'Selenium', :lib => false
+config.gem 'selenium-client', :lib => false
+
 config.gem 'cucumber-rails',   :lib => false, :version => '>=0.3.0' unless File.directory?(File.join(Rails.root, 'vendor/plugins/cucumber-rails'))
 config.gem 'database_cleaner', :lib => false, :version => '>=0.5.0' unless File.directory?(File.join(Rails.root, 'vendor/plugins/database_cleaner'))
 config.gem 'webrat',           :lib => false, :version => '>=0.7.0' unless File.directory?(File.join(Rails.root, 'vendor/plugins/webrat'))
 
 config.gem 'spork',            :lib => false, :version => '>=0.7.5' unless File.directory?(File.join(Rails.root, 'vendor/plugins/spork'))
 
-config.gem "factory_girl", :source => "http://gemcutter.org"
+config.gem 'factory_girl', :source => 'http://gemcutter.org'
+

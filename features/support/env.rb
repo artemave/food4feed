@@ -8,14 +8,13 @@ require 'rubygems'
 require 'spork'
  
 Spork.prefork do
-  ENV["RAILS_ENV"] ||= "cucumber"
+  ENV["RAILS_ENV"] = "cucumber"
   require File.expand_path(File.dirname(__FILE__) + '/../../config/environment')
   
-  require 'cucumber/formatter/unicode' # Remove this line if you don't want Cucumber Unicode support
+#  require 'cucumber/formatter/unicode' # Remove this line if you don't want Cucumber Unicode support
   require 'cucumber/rails/world'
   require 'cucumber/rails/active_record'
   require 'cucumber/web/tableish'
-
 
   require 'webrat'
   require 'webrat/core/matchers'
@@ -24,8 +23,6 @@ Spork.prefork do
     config.mode = :rails
     config.open_error_files = false # Set to true if you want error pages to pop up in the browser
   end
-  
-
 end
  
 Spork.each_run do
@@ -54,13 +51,4 @@ Spork.each_run do
   # block that will explicitly put your database in a known state.
   Cucumber::Rails::World.use_transactional_fixtures = true
   
-  # How to clean your database when transactions are turned off. See
-  # http://github.com/bmabey/database_cleaner for more info.
-  if defined?(ActiveRecord::Base)
-    begin
-      require 'database_cleaner'
-      DatabaseCleaner.strategy = :truncation
-    rescue LoadError => ignore_if_database_cleaner_not_present
-    end
-  end
 end

@@ -6,6 +6,6 @@ Given /^I am logged in$/ do
   click_link 'Log In'
   fill_in 'login', :with => 'artemave@gmail.com'
   fill_in 'password', :with => 'secret'
-  click_button 'Log In'
+  click_button 'Log in'
   Then "I should see \"You have logged in\""
 end

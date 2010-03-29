@@ -4,8 +4,10 @@ Feature: Manage Feeds
   As a logged in user
   I want to create and manage custom feeds from html pages
 
+  Background:
+    Given I am logged in
+
   Scenario: create new feed
-    Given I am logged in 
     When I am on the list of feeds
     And I follow "New Feed"
     And I fill in "feed[channel_name]" with "Weatherdiff"
@@ -16,8 +18,8 @@ Feature: Manage Feeds
     Then I should see "created successfully"
 
   Scenario: edit feed
-    Given there is a feed called "Weatherdiff"
-    When I go to my feeds
+    Given there is a test feed
+    When I go to the list of feeds
     And I follow "Edit"
     And I fill in "Name" with "Weatherdiff2"
     And I press "Save"
@@ -25,15 +27,15 @@ Feature: Manage Feeds
     Then I should see "Weatherdiff2"
 
   Scenario: use feed
-    Given there is a feed called "Weatherdiff"
-    When I go to my feeds
+    Given there is a test feed
+    When I go to the list of feeds
     And I follow "Weatherdiff"
     Then I should see "This is Weatherdiff,"
     And I should see "number of locations"
 
   Scenario: delete feed
-    Given there is a feed called "Weatherdiff"
-    When I go to my feeds
+    Given there is a test feed
+    When I go to the list of feeds
     And I follow "destroy"
     And I press "yes"
     Then I should have no feeds

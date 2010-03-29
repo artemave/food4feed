@@ -14,3 +14,11 @@
     <nav-item with="&Feed"><ht key="feeds.nav_item">My Feeds</ht></nav-item>
   </navigation>
 </def>
+
+<def tag="card" for="Feed">
+  <card class="feed" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><view:channel_name/></a></h4>
+    </header:>
+  </card>
+</def>

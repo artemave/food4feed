@@ -20,10 +20,11 @@ Feature: Manage Feeds
   Scenario: edit feed
     Given there is a test feed
     When I go to the list of feeds
-    And I follow "Edit"
-    And I fill in "Name" with "Weatherdiff2"
+    And I follow "Weatherdiff"
+    And I follow "Edit Feed"
+    And I fill in "feed[channel_name]" with "Weatherdiff2"
     And I press "Save"
-    And I go to my feeds
+    And I go to the list of feeds
     Then I should see "Weatherdiff2"
 
   Scenario: use feed
@@ -36,6 +37,7 @@ Feature: Manage Feeds
   Scenario: delete feed
     Given there is a test feed
     When I go to the list of feeds
-    And I follow "destroy"
-    And I press "yes"
-    Then I should have no feeds
+    And I follow "Weatherdiff"
+    And I follow "Edit Feed"
+    And I press "Remove This Feed"
+    Then there should be no feeds

@@ -1,7 +1,9 @@
 Given /^there is a test feed$/ do
-  # Feed already there? Then do nothing
-  return if Feed.find(:first, :conditions => { :channel_name => 'Weatherdiff' })
-
+  Feed.delete_all
   Factory(:feed)
+end
+
+Then /^there should be no feeds$/ do
+  Feed.count.should == 0
 end
 

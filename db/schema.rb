@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100317171428) do
+ActiveRecord::Schema.define(:version => 20100403201059) do
 
   create_table "feeds", :force => true do |t|
     t.string   "channel_name"
@@ -18,6 +18,9 @@ ActiveRecord::Schema.define(:version => 20100317171428) do
     t.string   "item_description_selector"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "item_container_selector"
+    t.text     "last_retreived_items"
+    t.datetime "last_build_date"
   end
 
   create_table "users", :force => true do |t|

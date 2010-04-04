@@ -1,6 +1,7 @@
 Given /^there is a test feed$/ do
   Feed.delete_all
-  Factory(:feed)
+  f = Factory(:feed)
+  f.refresh
 end
 
 Then /^there should be no feeds$/ do

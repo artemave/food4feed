@@ -22,3 +22,13 @@
     </header:>
   </card>
 </def>
+
+<def tag="form" for="Feed">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="channel_name, channel_link, item_container_selector, item_title_selector, item_description_selector" param/>
+    <div param="actions">
+      <submit label="#{ht 'feeds.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>

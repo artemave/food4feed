@@ -1,0 +1,1 @@
+Feed.make_sure_feed_path_exists

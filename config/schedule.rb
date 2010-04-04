@@ -18,3 +18,15 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+
+every 10.minutes do
+  runner %{
+    Feed.all.each do |f|
+      begin
+        f.refresh
+      rescue => e
+        Rails.logger.error e.backtrace.join('\n')
+      end
+    end
+  }
+end
